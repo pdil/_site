@@ -1,0 +1,24 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Paolo Di Lorenzo Blog",
+    "description": "A collection of articles on data, programming, tech, and the world by Paolo Di Lorenzo.",
+    "home_page_url": "http://dilorenzo.pl/blog",
+    "feed_url": "http://dilorenzo.pl/blog/feeds/microblog.json",
+    "items": [
+          {
+            "id": "/micro/2017/06/19/microblog-2/",
+            "title": "Micro.blog Post"
+            "content_text": "Just setup a pipeline to easily post to my blog using Jekyll, Travis CI, and the Working Copy iOS app. I’ll be using it for future micro.blog posts 😉",
+            "date_published": "2017-06-19 03:17:00 +0000",
+            "url": "https://dilorenzo.pl/micro/2017/06/19/microblog-2/"
+          },
+    
+          {
+            "id": "/micro/2017/04/29/microblog-1/",
+            "title": "Micro.blog Post"
+            "content_text": "First Micro.blog post! Excited to see what the future holds for this platform.",
+            "date_published": "2017-04-29 05:40:00 +0000",
+            "url": "https://dilorenzo.pl/micro/2017/04/29/microblog-1/"
+          },
+    ]
+}

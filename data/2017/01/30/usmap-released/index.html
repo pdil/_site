@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>usmap released</title>
+
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/github-light.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/monokai.css">
+    
+    <link href="https://micro.blog/p" rel="me" />
+    
+    <link rel="shortcut icon" href="https://dilorenzo.pl/favicon.ico" type="image/x-icon"/ >
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="name-header">
+          <a href="https://dilorenzo.pl"><img src="https://dilorenzo.pl/images/profile_pic_circle.png" alt=""></a><br>
+          <h1>Paolo Di Lorenzo</h1>
+        </div>
+          
+        <div id="social-icons">
+          <a href="https://github.com/pdil" target="_blank"><img src="https://dilorenzo.pl/images/social/github_vec.svg" height="32"></a>
+          <a href="https://twitter.com/dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/twitter_vec.svg" height="32"></a>
+          <a href="https://instagram.com/_dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/instagram_vec.svg" height="32"></a>  
+        </div>
+        
+        <ul>
+          <li><a href="https://dilorenzo.pl">Home</a></li>
+          <li><a href="https://dilorenzo.pl/about">About</a></li>
+          <li><a href="https://dilorenzo.pl/blog">Blog</a></li>
+        </ul>
+          
+        <hr>
+          
+        <ul>
+          <!-- <li><a href="https://dilorenzo.pl/passport">Passport</a></li> -->
+          <li><a href="https://dilorenzo.pl/usmap">usmap</a></li>
+        </ul>
+      </header>
+      
+      <section>
+        <span id="post-title-category">
+    <a href="https://dilorenzo.pl/blog/data">data</a> / 
+</span>
+
+<span id="post-title-name">
+    usmap released
+</span>
+
+<br>
+
+<span id="post-subtitle">
+    30 Jan 2017 • by Paolo Di Lorenzo
+</span>
+
+<br><br>
+
+<div><p>I just released my first R package to <a href="http://cran.r-project.org" target="_blank">CRAN</a>. It’s called <a href="http://cran.r-project.org/package=usmap" target="_blank">usmap</a> and can help you create nice US maps for visualizing countrywide data.</p>
+
+<p>Normally, plotting US maps in R is awkward because Alaska and Hawaii are far from the mainland US. So you either make the rest of the US look small, or omit Alaska and Hawaii entirely.</p>
+
+<p>Here’s an example: <br /></p>
+
+<center><img src="https://dilorenzo.pl/images/ugly-usmap.png" /></center>
+
+<p>Absolutely disgusting.</p>
+
+<p>Let’s try using <code class="highlighter-rouge">usmap</code>:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="w">    </span><span class="n">library</span><span class="p">(</span><span class="n">usmap</span><span class="p">)</span><span class="w">
+    </span><span class="n">plot_usmap</span><span class="p">()</span></code></pre></figure>
+
+<center><img src="https://dilorenzo.pl/images/nice-usmap.png" /></center>
+
+<p>Ah, much better. The map is even drawn using a nicer <a href="https://en.wikipedia.org/wiki/Albers_projection" target="_blank">equal-area projection</a>, rather than the default <a href="https://en.wikipedia.org/wiki/Mercator_projection" target="_blank">Mercator</a> that always seems to be used. You can also plot all the counties of the US with this package and select only certain states/counties to be drawn as well. You can see the county map at the landing page I created for this package by <a href="https://dilorenzo.pl/usmap">clicking here</a>.</p>
+
+<p>The <code class="highlighter-rouge">plot_usmap</code> function returns a <a href="https://github.com/tidyverse/ggplot2" target="_blank"><code class="highlighter-rouge">ggplot</code></a> object, which means you can very easily change the colors, titles, labels, etc. of the plot. See the <a href="https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html" target="_blank">mapping vignette</a> for more details.</p>
+
+<p>There are some convenience methods for working with <a href="https://en.wikipedia.org/wiki/FIPS_county_code" target="_blank">FIPS codes</a>, which is how the states and counties in the package are identified.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="w">    </span><span class="n">fips</span><span class="p">(</span><span class="s2">"NJ"</span><span class="p">)</span><span class="w">
+    </span><span class="n">fips</span><span class="p">(</span><span class="s2">"NJ"</span><span class="p">,</span><span class="w"> </span><span class="n">county</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Mercer"</span><span class="p">)</span></code></pre></figure>
+
+<p>If you want more information, be sure to check out the <a href="http://github.com/pdil/usmap" target="_blank">Github repository</a> or the vignettes.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="w">    </span><span class="n">vignette</span><span class="p">(</span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"usmap"</span><span class="p">)</span><span class="w">
+    </span><span class="n">vignette</span><span class="p">(</span><span class="s2">"introduction"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"usmap"</span><span class="p">)</span><span class="w">
+    </span><span class="n">vignette</span><span class="p">(</span><span class="s2">"mapping"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"usmap"</span><span class="p">)</span></code></pre></figure>
+
+<p>Feel free to fork the repository and submit pull requests with feature changes and fixes, I’m open to any suggestions. This package was a learning experience for me in creating R packages and starting an open source project. I look forward to maintaining it going forward and implementing great new features.</p>
+
+<hr />
+
+<p>The code that was used to create these maps was based on this blog post: <a href="https://rud.is/b/2014/11/16/moving-the-earth-well-alaska-hawaii-with-r/" target="_blank">https://rud.is/b/2014/11/16/moving-the-earth-well-alaska-hawaii-with-r/</a>.</p>
+</div>
+
+<br><br>
+      </section>
+      
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    
+    
+
+    <script src="https://dilorenzo.pl/javascripts/scale.fix.js"></script>
+        
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+        
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-66634023-1");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+
+
+    
+
+    <script type='text/javascript'>
+        var _merchantSettings=_merchantSettings || [];
+        _merchantSettings.push(['AT', '1001lxud']);
+
+        (function() {
+
+            var autolink=document.createElement('script');
+            autolink.type='text/javascript';
+            autolink.async=true; 
+            autolink.src=('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';
+
+            var s=document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(autolink, s);
+
+         })();
+    </script>
+
+
+
+  </body>
+</html>

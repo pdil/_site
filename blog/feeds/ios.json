@@ -1,0 +1,8 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Paolo Di Lorenzo Blog",
+    "description": "A collection of articles on data, programming, tech, and the world by Paolo Di Lorenzo.",
+    "home_page_url": "http://dilorenzo.pl/blog",
+    "feed_url": "http://dilorenzo.pl/blog/feeds/ios.json",
+    "items": []
+}

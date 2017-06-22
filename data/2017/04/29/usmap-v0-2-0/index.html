@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>usmap v0.2.0 released</title>
+
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/github-light.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/monokai.css">
+    
+    <link href="https://micro.blog/p" rel="me" />
+    
+    <link rel="shortcut icon" href="https://dilorenzo.pl/favicon.ico" type="image/x-icon"/ >
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="name-header">
+          <a href="https://dilorenzo.pl"><img src="https://dilorenzo.pl/images/profile_pic_circle.png" alt=""></a><br>
+          <h1>Paolo Di Lorenzo</h1>
+        </div>
+          
+        <div id="social-icons">
+          <a href="https://github.com/pdil" target="_blank"><img src="https://dilorenzo.pl/images/social/github_vec.svg" height="32"></a>
+          <a href="https://twitter.com/dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/twitter_vec.svg" height="32"></a>
+          <a href="https://instagram.com/_dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/instagram_vec.svg" height="32"></a>  
+        </div>
+        
+        <ul>
+          <li><a href="https://dilorenzo.pl">Home</a></li>
+          <li><a href="https://dilorenzo.pl/about">About</a></li>
+          <li><a href="https://dilorenzo.pl/blog">Blog</a></li>
+        </ul>
+          
+        <hr>
+          
+        <ul>
+          <!-- <li><a href="https://dilorenzo.pl/passport">Passport</a></li> -->
+          <li><a href="https://dilorenzo.pl/usmap">usmap</a></li>
+        </ul>
+      </header>
+      
+      <section>
+        <span id="post-title-category">
+    <a href="https://dilorenzo.pl/blog/data">data</a> / 
+</span>
+
+<span id="post-title-name">
+    usmap v0.2.0 released
+</span>
+
+<br>
+
+<span id="post-subtitle">
+    29 Apr 2017 • by Paolo Di Lorenzo
+</span>
+
+<br><br>
+
+<div><p>I finally got around to updating usmap to version 0.2.0. This version adds the crucial feature of adding data to your maps so that you can create colorful choropleths. This is done by using the <code>map_with_data</code> function to retrieve a data frame. Alternatively, the <code>plot_usmap</code> function has been updated to allow a <code>data</code> parameter to be defined.
+<br />
+Here is an example of such a plot: <br /></p>
+
+<center><img src="https://dilorenzo.pl/images/state-pop-example-w-key.png" /></center>
+
+<p>This map shows the population of each state as of 2015. The code to create this is as follows:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="w">  </span><span class="n">library</span><span class="p">(</span><span class="n">usmap</span><span class="p">)</span><span class="w">
+  </span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span><span class="w">
+
+  </span><span class="n">plot_usmap</span><span class="p">(</span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">statepop</span><span class="p">,</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"pop_2015"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> 
+    </span><span class="n">scale_fill_continuous</span><span class="p">(</span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"white"</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Population (2015)"</span><span class="p">,</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scales</span><span class="o">::</span><span class="n">dollar</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">scale_x_continuous</span><span class="p">(</span><span class="n">expand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_y_continuous</span><span class="p">(</span><span class="n">expand</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+    </span><span class="n">theme</span><span class="p">(</span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"right"</span><span class="p">)</span></code></pre></figure>
+
+<p>As you can see we utilize the extensibility of <code>ggplot2</code> to create a nice map complete with a key.
+<br /><br />
+The <a href="https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html" target="_blank">mapping vignette</a> has been updated with more examples of the new functionality. Be sure to view the documentation for more help with <code>plot_usmap</code> and <code>map_with_data</code>.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="w">  </span><span class="o">?</span><span class="n">usmap</span><span class="o">::</span><span class="n">plot_usmap</span><span class="w">
+  </span><span class="o">?</span><span class="n">usmap</span><span class="o">::</span><span class="n">map_with_data</span></code></pre></figure>
+
+<hr />
+
+<p>More features and fixes will be added soon as I move the package towards a stable 1.0 release. As always please check out the <a href="http://github.com/pdil/usmap" target="_blank">Github repo</a> for more information and to suggest/add new features.</p>
+</div>
+
+<br><br>
+      </section>
+      
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    
+    
+
+    <script src="https://dilorenzo.pl/javascripts/scale.fix.js"></script>
+        
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+        
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-66634023-1");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+
+
+    
+
+    <script type='text/javascript'>
+        var _merchantSettings=_merchantSettings || [];
+        _merchantSettings.push(['AT', '1001lxud']);
+
+        (function() {
+
+            var autolink=document.createElement('script');
+            autolink.type='text/javascript';
+            autolink.async=true; 
+            autolink.src=('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';
+
+            var s=document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(autolink, s);
+
+         })();
+    </script>
+
+
+
+  </body>
+</html>
