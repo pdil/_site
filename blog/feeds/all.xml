@@ -58,10 +58,10 @@
 &lt;p&gt;My workflow for editing and posting to this site on iOS revolve around two main apps.&lt;/p&gt;
 
 &lt;h3 id=&quot;working-copy&quot;&gt;Working Copy&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&quot; target=&quot;_blank&quot;&gt;Working Copy&lt;/a&gt; is a powerful git client that allows you to create and clone git repositories. I have my &lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;website-generator&lt;/code&gt;&lt;/a&gt; repository in Working Copy which lets me edit any file in that repo and commit the changes. As soon as the changes are committed, the Travis CI workflow detailed above is kicked off.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&amp;amp;at=1001lxud&quot; target=&quot;_blank&quot;&gt;Working Copy&lt;/a&gt; is a powerful git client that allows you to create and clone git repositories. I have my &lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;website-generator&lt;/code&gt;&lt;/a&gt; repository in Working Copy which lets me edit any file in that repo and commit the changes. As soon as the changes are committed, the Travis CI workflow detailed above is kicked off.&lt;/p&gt;
 
 &lt;h3 id=&quot;coda&quot;&gt;Coda&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&quot; target=&quot;_blank&quot;&gt;Coda&lt;/a&gt; is a wonderful code editing app by &lt;a href=&quot;https://panic.com&quot; target=&quot;_blank&quot;&gt;Panic&lt;/a&gt;. I use it to edit the files that I keep in Working Copy because of its great features. I especially love the webpage preview tool which lets you see how your content looks before you push.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&amp;amp;at=1001lxud&quot; target=&quot;_blank&quot;&gt;Coda&lt;/a&gt; is a wonderful code editing app by &lt;a href=&quot;https://panic.com&quot; target=&quot;_blank&quot;&gt;Panic&lt;/a&gt;. I use it to edit the files that I keep in Working Copy because of its great features. I especially love the webpage preview tool which lets you see how your content looks before you push.&lt;/p&gt;
 
 &lt;h3 id=&quot;side-by-side&quot;&gt;Side-by-side&lt;/h3&gt;
 
@@ -69,7 +69,7 @@
 
 &lt;p&gt;Here is an image of these two apps working side-by-side:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://dilorenzo.pl/images/working-copy-coda-workflow.png&quot; alt=&quot;Working Copy / Coda workflow&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dilorenzo.pl/images/working-copy-coda-workflow.png&quot;&gt;&lt;img src=&quot;https://dilorenzo.pl/images/working-copy-coda-workflow.png&quot; alt=&quot;Working Copy / Coda workflow&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;The iPad is great for this because of its SplitView multitasking feature. I’m excited for iOS 11’s file management and drag-and-drop improvements to help even further.&lt;/p&gt;
 
@@ -92,12 +92,12 @@
   &lt;li&gt;&lt;a href=&quot;https://github.com/pdil/_site&quot;&gt;_site repo&lt;/a&gt; (contains the generated files that actually present the site)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis CI&lt;/a&gt; (continuous integration platform)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://pushover.net&quot;&gt;Pushover&lt;/a&gt; (automated push notification service)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&quot;&gt;Working Copy&lt;/a&gt; (iOS git client)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&quot;&gt;Coda&lt;/a&gt; (iOS web development IDE)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&amp;amp;at=1001lxud&quot;&gt;Working Copy&lt;/a&gt; (iOS git client)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&amp;amp;at=1001lxud&quot;&gt;Coda&lt;/a&gt; (iOS web development IDE)&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english?fnode=56&quot;&gt;Apple Magic Keyboard&lt;/a&gt; (wireless Bluetooth keyboard)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                      <pubDate>2017-06-26T19:15:00+00:00</pubDate>
+                      <pubDate>2017-06-26T20:30:00+00:00</pubDate>
                       <link>https://dilorenzo.pl/meta/2017/06/26/automated-publishing-ios/</link>
                       <guid isPermalink="true">https://dilorenzo.pl/meta/2017/06/26/automated-publishing-ios/</guid>
                   </item>
