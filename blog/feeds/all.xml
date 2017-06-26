@@ -7,6 +7,105 @@
         
             
                 
+                  <item>
+                      <title>Automated publishing with Jekyll and Travis CI on iOS</title>
+                      <description>&lt;p&gt;My website/blog that you are currently reading is built using the &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll framework&lt;/a&gt; and hosted on &lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;. Jekyll allows one to define webpage layouts, insert plugins, and automate much of the blog generating process. For example, on my website I have used a &lt;a href=&quot;https://github.com/recurser/jekyll-plugins/blob/master/generate_categories.rb&quot;&gt;plugin&lt;/a&gt; that automatically generates all of the &lt;a href=&quot;https://dilorenzo.pl/blog/categories&quot;&gt;categories&lt;/a&gt; from the written posts. Similarly blog posts have a predefined layout that is used which allows me to focus on writing the content of each post and not worry about making sure each detail of the site (sidebar, CSS, etc.) is consistent throughout. Jekyll has the added benefit of generating a static HTML webpage from your layouts, stylesheets, plugins, and pages which tend to render much faster since there is no dynamic content.&lt;/p&gt;
+
+&lt;p&gt;With this power and flexibility comes a cost: in order to generate the webpages from the various files that are used, I need to run the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; command from the root directory. This compiles the files into a static webpage located in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/_site&lt;/code&gt; folder. The contents of the &lt;code class=&quot;highlighter-rouge&quot;&gt;/_site&lt;/code&gt; folder are pushed to my dedicated &lt;a href=&quot;https://github.com/pdil/_site&quot;&gt;repository&lt;/a&gt; on Github which then hosts the website on Github pages. The files used to generate the website are located in the &lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;website-generator&lt;/a&gt; repository.&lt;/p&gt;
+
+&lt;p&gt;So how do I build my website if I don’t have access to my laptop with the cloned repo and a terminal to use? This might occur when I’m away from home and need to fix a quick typo. Or perhaps I’m traveling and want to submit a post about my experiences. Enter my workflow, which allows me to update my website from any computer with an internet connection, even an iPhone or iPad.&lt;/p&gt;
+
+&lt;h2 id=&quot;automation-with-travis-ci&quot;&gt;Automation with Travis CI&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis CI&lt;/a&gt; is a continuous integration platform that is free for open source projects. When it is hooked up to a Github repository, it automatically builds the contents of the repo and runs any custom scripts or tests on the code within. The ability to customize settings and run shell scripts makes Travis CI very powerful in automating tasks.&lt;/p&gt;
+
+&lt;p&gt;Here are the steps that Travis CI executes for this site:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Changes to the website are pushed to &lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;pdil/website-generator&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Travis CI automatically begins the build process
+    &lt;ul&gt;
+      &lt;li&gt;The &lt;a href=&quot;https://github.com/pdil/website-generator/blob/master/.travis.yml&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt;&lt;/a&gt; file lists the settings that Travis is to use, as well as any commands that should be executed before/after the build.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;On the Travis CI server we install some Ruby gems that are needed for the build (&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;html-proofer&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-paginate&lt;/code&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run &lt;a href=&quot;https://github.com/pdil/website-generator/blob/master/scripts/build.sh&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts/build.sh&lt;/code&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;build.sh&lt;/code&gt; clones the &lt;code class=&quot;highlighter-rouge&quot;&gt;pdil/_site&lt;/code&gt; repo so that changes to it will be tracked and pushed back to Github&lt;/li&gt;
+      &lt;li&gt;Next it runs &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll build&lt;/code&gt; and checks for any HTML errors with &lt;code class=&quot;highlighter-rouge&quot;&gt;html-proofer&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Deploy the generated website by running &lt;a href=&quot;https://github.com/pdil/website-generator/blob/master/scripts/deploy.sh&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scripts/deploy.sh&lt;/code&gt;&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;deploy.sh&lt;/code&gt; switches to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, commits the changes, and pushes all of the files to &lt;a href=&quot;https://github.com/pdil/_site&quot;&gt;pdil/_site&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Github does all the work by hosting the contents of &lt;code class=&quot;highlighter-rouge&quot;&gt;pdil/_site&lt;/code&gt; on Github pages. The CNAME file points the domain name (&lt;code class=&quot;highlighter-rouge&quot;&gt;dilorenzo.pl&lt;/code&gt;) to the hosted content.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;I receive a push notification from &lt;a href=&quot;https://pushover.net&quot;&gt;Pushover&lt;/a&gt; indicating that the build was successfully deployed (or that it failed).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;That is the basic process by which my website is built, from sending the commit to viewing the content on this page.&lt;/p&gt;
+
+&lt;p&gt;Now I’ll briefly talk about the tools I use on iOS to post to this website.&lt;/p&gt;
+
+&lt;h2 id=&quot;publishing-from-ios&quot;&gt;Publishing from iOS&lt;/h2&gt;
+
+&lt;p&gt;My workflow for editing and posting to this site on iOS revolve around two main apps.&lt;/p&gt;
+
+&lt;h3 id=&quot;working-copy&quot;&gt;Working Copy&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&quot; target=&quot;_blank&quot;&gt;Working Copy&lt;/a&gt; is a powerful git client that allows you to create and clone git repositories. I have my &lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;website-generator&lt;/code&gt;&lt;/a&gt; repository in Working Copy which lets me edit any file in that repo and commit the changes. As soon as the changes are committed, the Travis CI workflow detailed above is kicked off.&lt;/p&gt;
+
+&lt;h3 id=&quot;coda&quot;&gt;Coda&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&quot; target=&quot;_blank&quot;&gt;Coda&lt;/a&gt; is a wonderful code editing app by &lt;a href=&quot;https://panic.com&quot; target=&quot;_blank&quot;&gt;Panic&lt;/a&gt;. I use it to edit the files that I keep in Working Copy because of its great features. I especially love the webpage preview tool which lets you see how your content looks before you push.&lt;/p&gt;
+
+&lt;h3 id=&quot;side-by-side&quot;&gt;Side-by-side&lt;/h3&gt;
+
+&lt;p&gt;Both Coda and Working Copy are compatible with Webdav servers so anything you edit in Coda immediately appears in Working Copy when the server is running (even if the iPad or iPhone is offline).&lt;/p&gt;
+
+&lt;p&gt;Here is an image of these two apps working side-by-side:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dilorenzo.pl/images/working-copy-coda-workflow.png&quot; alt=&quot;Working Copy / Coda workflow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The iPad is great for this because of its SplitView multitasking feature. I’m excited for iOS 11’s file management and drag-and-drop improvements to help even further.&lt;/p&gt;
+
+&lt;p&gt;I use an &lt;a href=&quot;https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english?fnode=56&quot; target=&quot;_blank&quot;&gt;Apple Magic Keyboard&lt;/a&gt; for typing with the iPad.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The combination of web services and iOS apps really come together to provide a streamlined workflow for publishing blogs using Jekyll. In fact, the blog post you’re reading right now was written from my iPad Air 2! This process could be extended to push the generated website files to any hosting platform that one is using to host their site (such as Amazon S3, Linode, etc.).&lt;/p&gt;
+
+&lt;p&gt;If you have any other ideas for improving this workflow or what techniques you use for your own content, tell me on &lt;a href=&quot;https://twitter.com/dilorenzopl&quot;&gt;Twitter&lt;/a&gt;. I’m always looking for ways to improve and am curious about other people’s methods.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;p&gt;The following links contain services and products that were mentioned earlier in the article, for your reference.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/pdil/website-generator&quot;&gt;website-generator repo&lt;/a&gt; (contains this all files used to generate this website)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/pdil/_site&quot;&gt;_site repo&lt;/a&gt; (contains the generated files that actually present the site)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis CI&lt;/a&gt; (continuous integration platform)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pushover.net&quot;&gt;Pushover&lt;/a&gt; (automated push notification service)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8&quot;&gt;Working Copy&lt;/a&gt; (iOS git client)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/coda/id500906297?mt=8&quot;&gt;Coda&lt;/a&gt; (iOS web development IDE)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english?fnode=56&quot;&gt;Apple Magic Keyboard&lt;/a&gt; (wireless Bluetooth keyboard)&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                      <pubDate>2017-06-26T19:15:00+00:00</pubDate>
+                      <link>https://dilorenzo.pl/meta/2017/06/26/automated-publishing-ios/</link>
+                      <guid isPermalink="true">https://dilorenzo.pl/meta/2017/06/26/automated-publishing-ios/</guid>
+                  </item>
+                
+            
+        
+            
+                
             
         
             

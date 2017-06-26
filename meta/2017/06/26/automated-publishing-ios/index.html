@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Automated publishing with Jekyll and Travis CI on iOS</title>
+
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/styles.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/github-light.css">
+    <link rel="stylesheet" href="https://dilorenzo.pl/stylesheets/monokai.css">
+    
+    <link href="https://micro.blog/p" rel="me" />
+    
+    <link rel="shortcut icon" href="https://dilorenzo.pl/favicon.ico" type="image/x-icon"/ >
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="name-header">
+          <a href="https://dilorenzo.pl"><img src="https://dilorenzo.pl/images/profile_pic_circle.png" alt=""></a><br>
+          <h1>Paolo Di Lorenzo</h1>
+        </div>
+          
+        <div id="social-icons">
+          <a href="https://github.com/pdil" target="_blank"><img src="https://dilorenzo.pl/images/social/github_vec.svg" height="32"></a>
+          <a href="https://twitter.com/dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/twitter_vec.svg" height="32"></a>
+          <a href="https://instagram.com/_dilorenzopl" target="_blank"><img src="https://dilorenzo.pl/images/social/instagram_vec.svg" height="32"></a>  
+        </div>
+        
+        <ul>
+          <li><a href="https://dilorenzo.pl">Home</a></li>
+          <li><a href="https://dilorenzo.pl/about">About</a></li>
+          <li><a href="https://dilorenzo.pl/blog">Blog</a></li>
+        </ul>
+          
+        <hr>
+          
+        <ul>
+          <!-- <li><a href="https://dilorenzo.pl/passport">Passport</a></li> -->
+          <li><a href="https://dilorenzo.pl/usmap">usmap</a></li>
+        </ul>
+      </header>
+      
+      <section>
+        <span id="post-title-category">
+    <a href="https://dilorenzo.pl/blog/meta">meta</a> / 
+</span>
+
+<span id="post-title-name">
+    Automated publishing with Jekyll and Travis CI on iOS
+</span>
+
+<br>
+
+<span id="post-subtitle">
+    26 Jun 2017 • by Paolo Di Lorenzo
+</span>
+
+<br><br>
+
+<div><p>My website/blog that you are currently reading is built using the <a href="https://jekyllrb.com">Jekyll framework</a> and hosted on <a href="https://pages.github.com">Github Pages</a>. Jekyll allows one to define webpage layouts, insert plugins, and automate much of the blog generating process. For example, on my website I have used a <a href="https://github.com/recurser/jekyll-plugins/blob/master/generate_categories.rb">plugin</a> that automatically generates all of the <a href="https://dilorenzo.pl/blog/categories">categories</a> from the written posts. Similarly blog posts have a predefined layout that is used which allows me to focus on writing the content of each post and not worry about making sure each detail of the site (sidebar, CSS, etc.) is consistent throughout. Jekyll has the added benefit of generating a static HTML webpage from your layouts, stylesheets, plugins, and pages which tend to render much faster since there is no dynamic content.</p>
+
+<p>With this power and flexibility comes a cost: in order to generate the webpages from the various files that are used, I need to run the <code class="highlighter-rouge">jekyll build</code> command from the root directory. This compiles the files into a static webpage located in the <code class="highlighter-rouge">/_site</code> folder. The contents of the <code class="highlighter-rouge">/_site</code> folder are pushed to my dedicated <a href="https://github.com/pdil/_site">repository</a> on Github which then hosts the website on Github pages. The files used to generate the website are located in the <a href="https://github.com/pdil/website-generator">website-generator</a> repository.</p>
+
+<p>So how do I build my website if I don’t have access to my laptop with the cloned repo and a terminal to use? This might occur when I’m away from home and need to fix a quick typo. Or perhaps I’m traveling and want to submit a post about my experiences. Enter my workflow, which allows me to update my website from any computer with an internet connection, even an iPhone or iPad.</p>
+
+<h2 id="automation-with-travis-ci">Automation with Travis CI</h2>
+<p><a href="https://travis-ci.org">Travis CI</a> is a continuous integration platform that is free for open source projects. When it is hooked up to a Github repository, it automatically builds the contents of the repo and runs any custom scripts or tests on the code within. The ability to customize settings and run shell scripts makes Travis CI very powerful in automating tasks.</p>
+
+<p>Here are the steps that Travis CI executes for this site:</p>
+
+<ol>
+  <li>
+    <p>Changes to the website are pushed to <a href="https://github.com/pdil/website-generator">pdil/website-generator</a></p>
+  </li>
+  <li>Travis CI automatically begins the build process
+    <ul>
+      <li>The <a href="https://github.com/pdil/website-generator/blob/master/.travis.yml"><code class="highlighter-rouge">.travis.yml</code></a> file lists the settings that Travis is to use, as well as any commands that should be executed before/after the build.</li>
+    </ul>
+  </li>
+  <li>
+    <p>On the Travis CI server we install some Ruby gems that are needed for the build (<code class="highlighter-rouge">jekyll</code>, <code class="highlighter-rouge">html-proofer</code>, and <code class="highlighter-rouge">jekyll-paginate</code>)</p>
+  </li>
+  <li>Run <a href="https://github.com/pdil/website-generator/blob/master/scripts/build.sh"><code class="highlighter-rouge">scripts/build.sh</code></a>
+    <ul>
+      <li><code class="highlighter-rouge">build.sh</code> clones the <code class="highlighter-rouge">pdil/_site</code> repo so that changes to it will be tracked and pushed back to Github</li>
+      <li>Next it runs <code class="highlighter-rouge">jekyll build</code> and checks for any HTML errors with <code class="highlighter-rouge">html-proofer</code></li>
+    </ul>
+  </li>
+  <li>Deploy the generated website by running <a href="https://github.com/pdil/website-generator/blob/master/scripts/deploy.sh"><code class="highlighter-rouge">scripts/deploy.sh</code></a>
+    <ul>
+      <li><code class="highlighter-rouge">deploy.sh</code> switches to the <code class="highlighter-rouge">_site</code> folder, commits the changes, and pushes all of the files to <a href="https://github.com/pdil/_site">pdil/_site</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Github does all the work by hosting the contents of <code class="highlighter-rouge">pdil/_site</code> on Github pages. The CNAME file points the domain name (<code class="highlighter-rouge">dilorenzo.pl</code>) to the hosted content.</p>
+  </li>
+  <li>I receive a push notification from <a href="https://pushover.net">Pushover</a> indicating that the build was successfully deployed (or that it failed).</li>
+</ol>
+
+<p>That is the basic process by which my website is built, from sending the commit to viewing the content on this page.</p>
+
+<p>Now I’ll briefly talk about the tools I use on iOS to post to this website.</p>
+
+<h2 id="publishing-from-ios">Publishing from iOS</h2>
+
+<p>My workflow for editing and posting to this site on iOS revolve around two main apps.</p>
+
+<h3 id="working-copy">Working Copy</h3>
+<p><a href="https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8" target="_blank">Working Copy</a> is a powerful git client that allows you to create and clone git repositories. I have my <a href="https://github.com/pdil/website-generator"><code class="highlighter-rouge">website-generator</code></a> repository in Working Copy which lets me edit any file in that repo and commit the changes. As soon as the changes are committed, the Travis CI workflow detailed above is kicked off.</p>
+
+<h3 id="coda">Coda</h3>
+<p><a href="https://itunes.apple.com/us/app/coda/id500906297?mt=8" target="_blank">Coda</a> is a wonderful code editing app by <a href="https://panic.com" target="_blank">Panic</a>. I use it to edit the files that I keep in Working Copy because of its great features. I especially love the webpage preview tool which lets you see how your content looks before you push.</p>
+
+<h3 id="side-by-side">Side-by-side</h3>
+
+<p>Both Coda and Working Copy are compatible with Webdav servers so anything you edit in Coda immediately appears in Working Copy when the server is running (even if the iPad or iPhone is offline).</p>
+
+<p>Here is an image of these two apps working side-by-side:</p>
+
+<p><img src="https://dilorenzo.pl/images/working-copy-coda-workflow.png" alt="Working Copy / Coda workflow" /></p>
+
+<p>The iPad is great for this because of its SplitView multitasking feature. I’m excited for iOS 11’s file management and drag-and-drop improvements to help even further.</p>
+
+<p>I use an <a href="https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english?fnode=56" target="_blank">Apple Magic Keyboard</a> for typing with the iPad.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The combination of web services and iOS apps really come together to provide a streamlined workflow for publishing blogs using Jekyll. In fact, the blog post you’re reading right now was written from my iPad Air 2! This process could be extended to push the generated website files to any hosting platform that one is using to host their site (such as Amazon S3, Linode, etc.).</p>
+
+<p>If you have any other ideas for improving this workflow or what techniques you use for your own content, tell me on <a href="https://twitter.com/dilorenzopl">Twitter</a>. I’m always looking for ways to improve and am curious about other people’s methods.</p>
+
+<hr />
+
+<h2 id="links">Links</h2>
+
+<p>The following links contain services and products that were mentioned earlier in the article, for your reference.</p>
+
+<ul>
+  <li><a href="https://github.com/pdil/website-generator">website-generator repo</a> (contains this all files used to generate this website)</li>
+  <li><a href="https://github.com/pdil/_site">_site repo</a> (contains the generated files that actually present the site)</li>
+  <li><a href="https://travis-ci.org">Travis CI</a> (continuous integration platform)</li>
+  <li><a href="https://pushover.net">Pushover</a> (automated push notification service)</li>
+  <li><a href="https://itunes.apple.com/us/app/working-copy-powerful-git-client/id896694807?mt=8">Working Copy</a> (iOS git client)</li>
+  <li><a href="https://itunes.apple.com/us/app/coda/id500906297?mt=8">Coda</a> (iOS web development IDE)</li>
+  <li><a href="https://www.apple.com/shop/product/MLA22LL/A/magic-keyboard-us-english?fnode=56">Apple Magic Keyboard</a> (wireless Bluetooth keyboard)</li>
+</ul>
+</div>
+
+<br><br>
+      </section>
+      
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        
+        
+
+    <script src="https://dilorenzo.pl/javascripts/scale.fix.js"></script>
+        
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+        
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-66634023-1");
+            pageTracker._trackPageview();
+        } catch(err) {}
+    </script>
+
+
+
+        
+
+    <script type='text/javascript'>
+        var _merchantSettings=_merchantSettings || [];
+        _merchantSettings.push(['AT', '1001lxud']);
+
+        (function() {
+
+            var autolink=document.createElement('script');
+            autolink.type='text/javascript';
+            autolink.async=true; 
+            autolink.src=('https:' == document.location.protocol) ? 'https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js' : 'http://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';
+
+            var s=document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(autolink, s);
+
+         })();
+    </script>
+
+
+      </footer>
+    </div>
+
+  </body>
+</html>
