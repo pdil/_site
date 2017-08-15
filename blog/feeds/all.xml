@@ -8,6 +8,21 @@
             
                 
                   <item>
+                      <title>usmap v0.2.1 released</title>
+                      <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;usmap v0.2.1&lt;/code&gt; is now available for download on &lt;a href=&quot;https://cran.r-project.org/package=usmap&quot;&gt;CRAN&lt;/a&gt;. This minor update includes bug fixes and documentation improvements.&lt;/p&gt;
+
+&lt;p&gt;You can read the full changelog &lt;a href=&quot;https://github.com/pdil/usmap/releases/tag/v0.2.1&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+                      <pubDate>2017-08-15T16:00:00+00:00</pubDate>
+                      <link>https://dilorenzo.pl/data/2017/08/15/usmap-v0-2-1/</link>
+                      <guid isPermalink="true">https://dilorenzo.pl/data/2017/08/15/usmap-v0-2-1/</guid>
+                  </item>
+                
+            
+        
+            
+                
+                  <item>
                       <title>Automated publishing with Jekyll and Travis CI on iOS</title>
                       <description>&lt;p&gt;My website/blog that you are currently reading is built using the &lt;a href=&quot;https://jekyllrb.com&quot;&gt;Jekyll framework&lt;/a&gt; and hosted on &lt;a href=&quot;https://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;. Jekyll allows one to define webpage layouts, insert plugins, and automate much of the blog generating process. For example, on my website I have used a &lt;a href=&quot;https://github.com/recurser/jekyll-plugins/blob/master/generate_categories.rb&quot;&gt;plugin&lt;/a&gt; that automatically generates all of the &lt;a href=&quot;https://dilorenzo.pl/blog/categories&quot;&gt;categories&lt;/a&gt; from the written posts. Similarly blog posts have a predefined layout that is used which allows me to focus on writing the content of each post and not worry about making sure each detail of the site (sidebar, CSS, etc.) is consistent throughout. Jekyll has the added benefit of generating a static HTML webpage from your layouts, stylesheets, plugins, and pages which tend to render much faster since there is no dynamic content.&lt;/p&gt;
 
