@@ -8,6 +8,28 @@
             
                 
                   <item>
+                      <title>Microblog 3</title>
+                      <description>&lt;p&gt;—
+layout: post
+title: Micro.blog Post #3
+category: micro
+author: Paolo Di Lorenzo
+date: 2017-09-12 17:28 -0500
+hidden: true
+—&lt;/p&gt;
+
+&lt;p&gt;Great fall event from Apple as usual, though disappointed to have to wait a couple months for iPhone X 😵&lt;/p&gt;
+</description>
+                      <pubDate>2017-09-12T00:00:00+00:00</pubDate>
+                      <link>https://dilorenzo.pl/2017/09/12/microblog-3/</link>
+                      <guid isPermalink="true">https://dilorenzo.pl/2017/09/12/microblog-3/</guid>
+                  </item>
+                
+            
+        
+            
+                
+                  <item>
                       <title>usmap v0.2.1 released</title>
                       <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;usmap v0.2.1&lt;/code&gt; is now available for download on &lt;a href=&quot;https://cran.r-project.org/package=usmap&quot;&gt;CRAN&lt;/a&gt;. This minor update includes bug fixes and documentation improvements.&lt;/p&gt;
 
