@@ -6,6 +6,14 @@
     "feed_url": "http://dilorenzo.pl/blog/feeds/microblog.json",
     "items": [
           {
+            "id": "/micro/2017/09/12/microblog-3/",
+            "title": "Micro.blog Post"
+            "content_text": "Great fall event from Apple as usual, though disappointed to have to wait a couple months for iPhone X 😵",
+            "date_published": "2017-09-12 22:28:00 +0000",
+            "url": "https://dilorenzo.pl/micro/2017/09/12/microblog-3/"
+          },
+    
+          {
             "id": "/micro/2017/06/19/microblog-2/",
             "title": "Micro.blog Post"
             "content_text": "Just setup a pipeline to easily post to my blog using Jekyll, Travis CI, and the Working Copy iOS app. I’ll be using it for future micro.blog posts 😉",

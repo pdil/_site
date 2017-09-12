@@ -6,14 +6,6 @@
     "feed_url": "http://dilorenzo.pl/blog/feeds/all.json",
     "items": [
           {
-            "id": "/2017/09/12/microblog-3/",
-            "title": "Microblog 3"
-            "content_html": "<p>—\nlayout: post\ntitle: Micro.blog Post #3\ncategory: micro\nauthor: Paolo Di Lorenzo\ndate: 2017-09-12 17:28 -0500\nhidden: true\n—</p>\n\n<p>Great fall event from Apple as usual, though disappointed to have to wait a couple months for iPhone X 😵</p>",
-            "date_published": "2017-09-12 00:00:00 +0000",
-            "url": "https://dilorenzo.pl/2017/09/12/microblog-3/"
-          },
-    
-          {
             "id": "/data/2017/08/15/usmap-v0-2-1/",
             "title": "usmap v0.2.1 released"
             "content_html": "<p><code class=\"highlighter-rouge\">usmap v0.2.1</code> is now available for download on <a href=\"https://cran.r-project.org/package=usmap\">CRAN</a>. This minor update includes bug fixes and documentation improvements.</p>\n\n<p>You can read the full changelog <a href=\"https://github.com/pdil/usmap/releases/tag/v0.2.1\">here</a>.</p>",
