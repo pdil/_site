@@ -14,8 +14,12 @@
 &lt;h2 id=&quot;born-in-charleston-sc&quot;&gt;Born in Charleston, SC&lt;/h2&gt;
 &lt;p&gt;Right after Christmas 2016, my girlfriend and I took a road trip down to South Carolina to get away from the harsh northern weather and experience a new place. Charleston was a beautiful little city with countless things to do and places to see. One thing that struck me was the abundance of highly rated eateries in such a concentrated downtown area. Answering the timeless travel question “where should we eat next?” became a constant bottleneck in deciding how we spent our day. Much time was wasted perusing the available dining options in Google Maps or Yelp before we decided on a place to eat.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dilorenzo.pl/images/google_maps_example.png&quot;&gt;&lt;img src=&quot;https://dilorenzo.pl/images/google_maps_example.png&quot; alt=&quot;Google Maps&quot; /&gt;&lt;/a&gt;
-&lt;a href=&quot;https://dilorenzo.pl/images/yelp_example.png&quot;&gt;&lt;img src=&quot;https://dilorenzo.pl/images/yelp_example.png&quot; alt=&quot;Yelp&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&quot;https://dilorenzo.pl/images/google_maps_example.png&quot;&gt;&lt;img src=&quot;https://dilorenzo.pl/images/google_maps_example.png&quot; width=&quot;200&quot; alt=&quot;Google Maps Example&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&quot;https://dilorenzo.pl/images/yelp_example.png&quot;&gt;&lt;img src=&quot;https://dilorenzo.pl/images/yelp_example.png&quot; width=&quot;200&quot; alt=&quot;Yelp Example&quot; /&gt;&lt;/a&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
 
 &lt;p&gt;One of the great difficulties in deciding where to eat was due to having &lt;em&gt;too many&lt;/em&gt; options. Should we have burgers, tacos, Italian, or Chinese food? Something fancy or something more casual? Should we walk there or pick something further and use ride sharing?&lt;/p&gt;
 
