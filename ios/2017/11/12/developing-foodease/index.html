@@ -62,22 +62,22 @@
 <br>
 
 <span id="post-subtitle">
-    13 Nov 2017 • by Paolo Di Lorenzo
+    12 Nov 2017 • by Paolo Di Lorenzo
 </span>
 
 <br><br>
 
-<div><p>Just over six weeks ago, I released my first iPhone app, <a href="https://foodease.xyz">FoodEase</a> to the App Store. I haven’t written any formal blog posts since then so I thought it might be a good idea to lay out my thoughts and vision for FoodEase, as well as what led to its creation.</p>
+<div><p>Just over five weeks ago, I released my first iPhone app, <a href="https://foodease.xyz">FoodEase</a> to the App Store. I haven’t written any formal blog posts since then so I thought it might be a good idea to lay out my thoughts and vision for FoodEase, as well as what led to its creation.</p>
 
 <h2 id="born-in-charleston-sc">Born in Charleston, SC</h2>
 <p>Right after Christmas 2016, my girlfriend and I took a road trip down to South Carolina to get away from the harsh northern weather and experience a new place. Charleston was a beautiful little city with countless things to do and places to see. One thing that struck me was the abundance of highly rated eateries in such a concentrated downtown area. Answering the timeless travel question “where should we eat next?” became a constant bottleneck in deciding how we spent our day. Much time was wasted perusing the available dining options in Google Maps or Yelp before we decided on a place to eat.</p>
 
-<table>
-  <tr>
+<p>&lt;table class=“centered”&gt;</p>
+<tr>
     <td><a href="https://dilorenzo.pl/images/google_maps_example.png"><img src="https://dilorenzo.pl/images/google_maps_example.png" width="200" alt="Google Maps Example" /></a></td>
     <td><a href="https://dilorenzo.pl/images/yelp_example.png"><img src="https://dilorenzo.pl/images/yelp_example.png" width="200" alt="Yelp Example" /></a></td>
   </tr>
-</table>
+<p>&lt;/table&gt;</p>
 
 <p>One of the great difficulties in deciding where to eat was due to having <em>too many</em> options. Should we have burgers, tacos, Italian, or Chinese food? Something fancy or something more casual? Should we walk there or pick something further and use ride sharing?</p>
 
@@ -116,13 +116,13 @@
 <h2 id="smooth-reachable-design">Smooth, reachable design</h2>
 <p>The “brain” behind the recommendations would be useless without a visually appealing user interface to display results. The focus for developing the interface of FoodEase relied on creating a relatively fresh design that can easily be used with one hand, regardless of screen size. All main actions within FoodEase can be performed by constraining any touches to the bottom half of the screen. This is especially helpful in the context that this app would mainly be used: while navigating a busy street to reach a destination.</p>
 
-<table>
-  <tr>
+<p>&lt;table class=“centered”&gt;</p>
+<tr>
     <td><a href="https://dilorenzo.pl/images/foodease_main.png"><img src="https://dilorenzo.pl/images/foodease_main.png" width="200" alt="Main Screen" /></a></td>
     <td><a href="https://dilorenzo.pl/images/foodease_map.png"><img src="https://dilorenzo.pl/images/foodease_map.png" width="200" alt="Map Screen" /></a></td>
     <td><a href="https://dilorenzo.pl/images/foodease_settings.png"><img src="https://dilorenzo.pl/images/foodease_settings.png" width="200" alt="Settings Screen" /></a></td>
   </tr>
-</table>
+<p>&lt;/table&gt;</p>
 
 <h3 id="designed-for-reachability">Designed for reachability</h3>
 <p>I was especially pleased with my initial decision to pursue a reachable design (circa February 2017) when <a href="https://www.apple.com/newsroom/2017/09/the-future-is-here-iphone-x/">iPhone X was announced</a> in Fall 2017. The new phone boasts a much taller screen than users are used to (at least non-Plus users). The reaction buttons fall in the perfect zone to reach in a one-handed fashion—not too high up but not too low either. The toolbar icons would be the next most used buttons, and they fall along the bottom edge of the screen (no pesky hamburger menus in the upper corners). The map button, which would be the most used toolbar button, can actually be replaced by swiping down anywhere on the <em>entire</em> main screen. This is very convenient for one-handedness. Once on the map screen, the user can return to the main screen by swiping up from the bottom panel (or tapping it) and all of the map manipulation buttons are easily accessible at the bottom left. Inside the slide-up views from the main screen (e.g. Settings or Details) I have implemented a simple, subtle feature which goes a long way to improving one-handed accessibility: the “Done” button is located at the <em>bottom</em> of the screen, not the top where it’s usually found. Moreover, this dismissive “Done” button is available on any of these modal screens, no matter how deep in the navigation hierarchy the user is. This makes it very easy for the user to return to the main screen (which can sometimes be a point of confusion inside modal views).</p>
