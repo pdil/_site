@@ -8,7 +8,7 @@
           {
             "id": "/micro/2017/11/24/microblog-5/",
             "title": "Micro.blog Post"
-            "content_text": "Testing image posting from my Micro.blog workflow…\n\nHere’s an image of a Disney cruise on the Hudson River:\n\n&lt;img src=“https://dilorenzo.pl/images/microblog/hudson-cruise.jpg”&gt;",
+            "content_text": "Testing image posting from my Micro.blog workflow…\n\nHere’s an image of a Disney cruise on the Hudson River:\n\n&lt;img src=“https://dilorenzo.pl/images/microblog/hudson-cruise.jpg” alt=“” width=500&gt;",
             "date_published": "2017-11-24 19:02:01 +0000",
             "url": "https://dilorenzo.pl/micro/2017/11/24/microblog-5/"
           },
