@@ -46,7 +46,7 @@
 &lt;br /&gt;
 Here is an example of such a plot: &lt;br /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/state-pop-example-w-key.png&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/state-pop-example-w-key.png&quot; alt=&quot;State population choropleth&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;This map shows the population of each state as of 2015. The code to create this is as follows:&lt;/p&gt;
 
@@ -88,7 +88,7 @@ The &lt;a href=&quot;https://cran.r-project.org/web/packages/usmap/vignettes/map
 
 &lt;p&gt;Here’s an example: &lt;br /&gt;&lt;/p&gt;
 
-&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/ugly-usmap.png&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/ugly-usmap.png&quot; alt=&quot;Default US map&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;Absolutely disgusting.&lt;/p&gt;
 
@@ -97,7 +97,7 @@ The &lt;a href=&quot;https://cran.r-project.org/web/packages/usmap/vignettes/map
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
     &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;plot_usmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/nice-usmap.png&quot; /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src=&quot;https://dilorenzo.pl/images/nice-usmap.png&quot; alt=&quot;Better US map&quot; /&gt;&lt;/center&gt;
 
 &lt;p&gt;Ah, much better. The map is even drawn using a nicer &lt;a href=&quot;https://en.wikipedia.org/wiki/Albers_projection&quot; target=&quot;_blank&quot;&gt;equal-area projection&lt;/a&gt;, rather than the default &lt;a href=&quot;https://en.wikipedia.org/wiki/Mercator_projection&quot; target=&quot;_blank&quot;&gt;Mercator&lt;/a&gt; that always seems to be used. You can also plot all the counties of the US with this package and select only certain states/counties to be drawn as well. You can see the county map at the landing page I created for this package by &lt;a href=&quot;https://dilorenzo.pl/pkgs/usmap&quot;&gt;clicking here&lt;/a&gt;.&lt;/p&gt;
 
