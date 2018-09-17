@@ -6,6 +6,14 @@
     "feed_url": "http://dilorenzo.pl/blog/feeds/microblog.json",
     "items": [
           {
+            "id": "/micro/2018/09/17/microblog-8/",
+            "title": "Micro.blog Post #8"
+            "content_text": "🗺 usmap v0.4.0 is now available on CRAN\n\nIt has some nice new features:\n• Add state labels to plots\n• Built-in census regions are now included\n• Isolate county maps to only display certain states\n• A few more improvements and bug fixes\n\nhttps://github.com/pdil/usmap\nhttps://cran.r-project.org/package=usmap",
+            "date_published": "2018-09-17 18:26:06 +0000",
+            "url": "https://dilorenzo.pl/micro/2018/09/17/microblog-8/"
+          },
+    
+          {
             "id": "/micro/2018/03/28/microblog-7/",
             "title": "Micro.blog Post #7"
             "content_text": "Here’s a photo from the March for Our Lives in NYC last Saturday.\n\n",

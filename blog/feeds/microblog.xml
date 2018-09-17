@@ -6,6 +6,27 @@
         <link>https://dilorenzo.pl</link>
         
             
+            
+                <item>
+                    <description>&lt;p&gt;🗺 usmap v0.4.0 is now available on CRAN&lt;/p&gt;
+
+&lt;p&gt;It has some nice new features:
+• Add state labels to plots
+• Built-in census regions are now included
+• Isolate county maps to only display certain states
+• A few more improvements and bug fixes&lt;/p&gt;
+
+&lt;p&gt;https://github.com/pdil/usmap
+https://cran.r-project.org/package=usmap&lt;/p&gt;
+</description>
+                    <pubDate>2018-09-17T18:26:06+00:00</pubDate>
+                    <link>https://dilorenzo.pl/micro/2018/09/17/microblog-8/</link>
+                    <guid isPermalink="true">https://dilorenzo.pl/micro/2018/09/17/microblog-8/</guid>
+                </item>
+            
+            
+        
+            
         
             
             
