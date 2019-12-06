@@ -13,8 +13,6 @@
 
 &lt;p&gt;In this article I’m going to list the apps that I use in my photography pipeline, all the way from capturing to publishing. I am by no means an expert photographer (nor have I tested all of the apps in each category) but this is the setup I use if you’re looking for some inspiration.&lt;/p&gt;
 
-&lt;p&gt;I welcome any suggestions or feedback on &lt;a href=&quot;https://twitter.com/dilorenzopl&quot;&gt;Twitter&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;The main steps in my iOS photography are as follows:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Capture&lt;/li&gt;
@@ -63,7 +61,7 @@ This list contains some apps that I don’t regularly use but do have some nice 
 &lt;h3 id=&quot;slow-shutter&quot;&gt;Slow Shutter&lt;/h3&gt;
 &lt;p&gt;I’ve had &lt;a href=&quot;https://itunes.apple.com/us/app/slow-shutter-cam/id357404131?mt=8&amp;amp;uo=4&amp;amp;at=1001lxud&quot;&gt;Slow Shutter&lt;/a&gt; on my phone for quite some time, at least 4-5 years. It allows you to record long exposure shots with the phone. It essentially captures a short video and then overlays the differences between the frames to create a nice blurred effect (assuming the phone wasn’t moved during capture). This app is best used with a tripod or spot you can lean the phone against. Since iOS 11 was released however, I’ve been mostly using the long exposure Live Photo effect in the Photos app.&lt;/p&gt;
 &lt;h3 id=&quot;imovie&quot;&gt;iMovie&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/imovie/id377298193?mt=8&amp;amp;uo=4&amp;amp;at=1001lxud&quot;&gt;iMovie&lt;/a&gt; is my video editor of choice, since it’s free and simple. I don’t usually record and edit video but when I need to string a few clips together and add some effects it gets the job done. It was &lt;a href=&quot;https://twitter.com/dilorenzopl/status/984543207634718722&quot;&gt;finally&lt;/a&gt; updated to support the full iPhone X screen size.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/imovie/id377298193?mt=8&amp;amp;uo=4&amp;amp;at=1001lxud&quot;&gt;iMovie&lt;/a&gt; is my video editor of choice, since it’s free and simple. I don’t usually record and edit video but when I need to string a few clips together and add some effects it gets the job done. It was finally updated to support the full iPhone X screen size.&lt;/p&gt;
 &lt;h3 id=&quot;hyperlapse&quot;&gt;Hyperlapse&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&quot;https://itunes.apple.com/us/app/hyperlapse-from-instagram/id740146917?mt=8&amp;amp;uo=4&amp;amp;at=1001lxud&quot;&gt;Hyperlapse&lt;/a&gt; is a simple app by Instagram that allows the user to take time-lapses. The UI is dead simple and the only options are front or back camera and the speed of the time-lapse once its recorded. I find that it makes smoother videos than the built-in Camera app’s time-lapse functionality. I &lt;a href=&quot;https://instagram.com/p/BYE7GxHgBTa/&quot;&gt;recorded a landscape during the August 2017 total solar eclipse&lt;/a&gt; using Hyperlapse.&lt;/p&gt;
 &lt;h3 id=&quot;swipeable&quot;&gt;Swipeable&lt;/h3&gt;
@@ -182,7 +180,7 @@ This list contains some apps that I don’t regularly use but do have some nice 
 &lt;p&gt;The ultimate goal for this app is to provide the user with the perfect suggestion 100% of the time, and then providing an elegant experience to navigate to such a place. Of course, with any machine learning based solution, it is almost certainly impossible to achieve such accuracy. However, there are definitely ways to try to get as close to 100%, and it is definitely possible to provide an immersive navigation experience once the user has selected a place. These define my long term goals, and the way we get there is to increase the number of settings, include as many variables as possible (without intruding on user privacy) to determine what places are presented, allow the engine to update based on user actions, and maximize algorithm performance so the user can be on their way quickly. Once the perfect place has been suggested, the user should be able to request a ride or navigate to said place, easily and without leaving the app. That would be the ultimate FoodEase experience.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;If you made it this far through the blog post, I give you my thanks for choosing to experience a slice of this journey with me. This was my first time publishing a major piece of software online and I hope this post shed some light on my thoughts and ideas as it happened. I invite you to send me &lt;em&gt;your&lt;/em&gt; thoughts about this story or the app on &lt;a href=&quot;https://twitter.com/dilorenzopl&quot;&gt;Twitter&lt;/a&gt; or by &lt;a href=&quot;mailto:paolo@dilorenzo.pl&quot;&gt;email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you made it this far through the blog post, I give you my thanks for choosing to experience a slice of this journey with me. This was my first time publishing a major piece of software online and I hope this post shed some light on my thoughts and ideas as it happened.&lt;/p&gt;
 
 &lt;p&gt;If FoodEase sounds like something you would enjoy using, please &lt;a href=&quot;https://foodease.xyz/download&quot;&gt;download it on the App Store&lt;/a&gt;, leave a rating &amp;amp; review, and tell a friend!&lt;/p&gt;
 
@@ -286,8 +284,6 @@ This list contains some apps that I don’t regularly use but do have some nice 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;The combination of web services and iOS apps really come together to provide a streamlined workflow for publishing blogs using Jekyll. In fact, the blog post you’re reading right now was written from my iPad Air 2! This process could be extended to push the generated website files to any hosting platform that one is using to host their site (such as Amazon S3, Linode, etc.).&lt;/p&gt;
-
-&lt;p&gt;If you have any other ideas for improving this workflow or what techniques you use for your own content, tell me on &lt;a href=&quot;https://twitter.com/dilorenzopl&quot;&gt;Twitter&lt;/a&gt;. I’m always looking for ways to improve and am curious about other people’s methods.&lt;/p&gt;
 
 &lt;hr /&gt;
 
